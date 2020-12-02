@@ -1,0 +1,18 @@
+<!--suppress ALL -->
+
+<!-- Card that shows the hero atributes -->
+<div class="card animated fadeIn fast" >
+  <img class="card-img-top" [src]="hero.img" [alt]="hero.nombre">
+  <div class="card-body">
+    <h5 class="card-title">{{ hero.nombre }} {{ hero.casa }}</h5>
+    <p class="card-text">{{ hero.bio }}</p>
+    <p class="card-text"><small class="text-muted">{{ hero.aparicion }}</small></p>
+
+    <button (click)="showHero()"
+            type="button"
+            class="btn btn-outline-primary btn-block">Se more
+    </button>
+
+    <!--<a [routerLink]="['/hero', i]" class="btn btn-outline-primary">Ver Más</a>-->
+  </div>
+</div>

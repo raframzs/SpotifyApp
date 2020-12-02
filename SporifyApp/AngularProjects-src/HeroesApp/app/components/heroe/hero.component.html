@@ -1,0 +1,35 @@
+<!--suppress TypeScriptUnresolvedVariable -->
+<div class="row animated fadeIn fast">
+  <!-- This is the personal component that shows each selected hero -->
+  <div class="col-md-4">
+    <img [src]="hero.img" [alt]="hero.nombre" class="img-fluid">
+    <br><br>
+    <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block"> Get Back to Heroes</a>
+  </div>
+
+  <div class="col-md-8">
+
+    <!--  Using a pipe to show always the hero name on uppercase -->
+    <h1 class="animated fadeIn">
+      {{ hero.nombre | uppercase }} <small>
+      {{ hero.aparicion | date: 'y' }}</small></h1>
+
+    <hr>
+    <p>{{ hero.bio }}</p>
+
+    <div >
+      <!-- if hero is from DC -->
+      <img *ngIf="hero.casa == 'DC'"
+           src="assets/img/dc_logo.png"
+           [alt]="hero.nombre"
+           class="img-fluid">
+
+      <!-- if hero is from Marvel -->
+      <img *ngIf="hero.casa == 'Marvel'"
+           src="assets/img/marvel_logo.png"
+           [alt]="hero.nombre"
+           class="img-fluid">
+
+    </div>
+  </div>
+</div>
